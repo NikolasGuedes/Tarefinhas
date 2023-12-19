@@ -168,6 +168,12 @@ header ul li img {
   header ul {
     margin-right: 0;
   }
+  .menu_lixeira {
+    margin-right: 1em;
+  }
+  .menu_config {
+    margin-right: 1em;
+  }
 }
 .app__local-tarefas {
   display: flex;
@@ -289,7 +295,6 @@ header ul li img {
   margin: auto;
   z-index: 10;
   padding: 1em;
-  margin: 0;
 }
 .marca_d_agua p {
   text-transform: uppercase;
@@ -300,6 +305,9 @@ header ul li img {
 @media (max-width: 560px) {
   .app__local-tarefas ul {
     justify-content: center;
+  }
+  .marca_d_agua {
+    width: 90%;
   }
 }
 .modal_formulario {
@@ -432,4 +440,48 @@ header ul li img {
 .modal_formulario::backdrop {
   background: black;
   opacity: 0.5;
+}
+
+@media (max-width: 560px) {
+  .modal_formulario {
+    height: 45em;
+  }
+  .modal_formulario div form {
+    padding: 1em 1em 1em 1em;
+  }
+  .modal_formulario div form div {
+    flex-direction: column;
+  }
+  .modal_formulario div form div h2 {
+    align-self: flex-start;
+    font-size: 1.5em;
+  }
+  .modal_formulario div form div input {
+    width: 90%;
+    margin: auto;
+  }
+  .modal_formulario div form div div {
+    flex-direction: row;
+    width: 80%;
+    margin-top: 1.5em;
+    justify-content: space-evenly;
+  }
+  .modal_formulario div form h2 {
+    font-size: 1.5em;
+  }
+  .modal_formulario div form .formulario__secao-botoes {
+    margin-top: 2em;
+    flex-direction: column-reverse;
+    justify-content: center;
+    width: 100%;
+  }
+  .modal_formulario div form .formulario__secao-botoes #botao-deletar {
+    width: 100%;
+    height: 3em;
+  }
+  .modal_formulario div form .formulario__secao-botoes button {
+    width: 100%;
+    margin: 0.5em 0;
+    height: 3em;
+  }
 }/*# sourceMappingURL=style.css.map */

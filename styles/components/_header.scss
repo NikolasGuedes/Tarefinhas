@@ -196,13 +196,10 @@ header {
 
     header {
 
-       
         justify-content: space-evenly;
-        
 
         h1 {
-           
-           
+
             margin-left: 0;
         }
 
@@ -210,11 +207,15 @@ header {
            
             margin-right: 0;
 
-          
-
-
-           
         }
+    }
+
+    .menu_lixeira{
+        margin-right: 1em;
+    }
+
+    .menu_config{
+        margin-right: 1em;
     }
 
 }
