@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefinhas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="./JS/script-crud.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Tarefinhas</h1>
+        <ul>
+            <!-- <li><img src="./imagens/icone_filtro.png" alt="icone de filtro" id="botao__icone_filtro"></li> -->
+            <li><img src="./imagens/icone_lixeira.png" alt="icone de lixeira" id="botao__icone_lixeira"></li>
+            <li><img src="./imagens/icone_config.png" alt="icone de configuracoes" id="botao__icone_config"></li>
+        </ul>
+    </header>
+    <ul class="app__regiao_navbar--fluante">
+        <li class="menu_filtro hidden">
+            <p id="opcao_remover_filtro">Remover Filtro</p>
+            <div>
+                <svg id="opcao_filtro_01" class="opcao_filtro" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" fill="#D80032"></circle>
+                </svg>
+                <svg id="opcao_filtro_02" class="opcao_filtro" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" fill="#FF90BC"></circle>
+                </svg>
+                <svg id="opcao_filtro_03" class="opcao_filtro" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" fill="#7071E8"></circle>
+                </svg>
+                <svg id="opcao_filtro_04" class="opcao_filtro" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" fill="#00A3FF"></circle>
+                </svg>
+            </div>
+        </li>
+        <li class="menu_lixeira hidden">
+            <p id="botao_lateral--deletar_concluidas">deletar concluidas</p>
+            <p id="botao_lateral--deletar_todas">deletar todas</p>
+        </li>
+        <li class="menu_config hidden">
+            <p>Tema Selecionado:</p>
+            <p id="nome_tema-selecionado">PLACEHOLDER</p>
+            <div>
+                <svg id="opcao_tema_01" class="opcao_tema" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="Gradiente_01" x1="0" x2="0" y1="0" y2="1">
+                            <stop class="cor_01_tema_01" offset="0%" />
+                            <stop class="cor_02_tema_01" offset="80%" />
+
+                        </linearGradient>
+                    </defs>
+                    <style>
+                        #degrade_01 {
+                            fill: url(#Gradiente_01);
+                        }
+
+                        .cor_01_tema_01 {
+                            stop-color: #08AEEA;
+                        }
+
+                        .cor_02_tema_01 {
+                            stop-color: #2AF598;
+
+                        }
+                    </style>
+                    <circle cx="12" cy="12" r="10" id="degrade_01"></circle>
+                </svg>
+                <svg id="opcao_tema_02" class="opcao_tema" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="Gradiente_02" x1="0" x2="0" y1="0" y2="1">
+                            <stop class="cor_01_tema_02" offset="0%" />
+                            <stop class="cor_02_tema_02" offset="80%" />
+                        </linearGradient>
+                    </defs>
+                    <style>
+                        #degrade_02 {
+                            fill: url(#Gradiente_02);
+                        }
+
+                        .cor_01_tema_02 {
+                            stop-color: #FBCE6B;
+                        }
+
+                        .cor_02_tema_02 {
+                            stop-color: #FF5ACD;
+
+                        }
+                    </style>
+                    <circle cx="12" cy="12" r="10" id="degrade_02"></circle>
+                </svg>
+                <svg id="opcao_tema_03" class="opcao_tema" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="Gradiente_03" x1="0" x2="0" y1="0" y2="1">
+                            <stop class="cor_01_tema_03" offset="0%" />
+                            <stop class="cor_02_tema_03" offset="80%" />
+                        </linearGradient>
+                    </defs>
+                    <style>
+                        #degrade_03 {
+                            fill: url(#Gradiente_03);
+                        }
+
+                        .cor_01_tema_03 {
+                            stop-color: #B900FD;
+                        }
+
+                        .cor_02_tema_03 {
+                            stop-color: #261AB2;
+
+                        }
+                    </style>
+                    <circle cx="12" cy="12" r="10" id="degrade_03"></circle>
+                </svg>
+                <svg id="opcao_tema_04" class="opcao_tema" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="Gradiente_04" x1="0" x2="0" y1="0" y2="1">
+                            <stop class="cor_01_tema_04" offset="0%" />
+                            <stop class="cor_02_tema_04" offset="80%" />
+                        </linearGradient>
+                    </defs>
+                    <style>
+                        #degrade_04 {
+                            fill: url(#Gradiente_04);
+                        }
+
+                        .cor_01_tema_04 {
+                            stop-color: #0075FF;
+                        }
+
+                        .cor_02_tema_04 {
+                            stop-color: #0BFBE1;
+
+                        }
+                    </style>
+                    <circle cx="12" cy="12" r="10" id="degrade_04"></circle>
+                </svg>
+            </div>
+        </li>
+    </ul>
+    <main class="app__local-tarefas">
+
+        <ul id="app__lista-tarefas">
+            <!-- <li>
+                <div class="tarefa__header">
+                    <svg class="app_section-task-icon-status" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="12" fill="#FFFFFF"></circle>
+                         <path d="M9 16.1719L19.5938 5.57812L21 6.98438L9 18.9844L3.42188 13.4062L4.82812 12L9 16.1719Z"
+                            fill="#01080E"></path> 
+                    </svg>
+                    <h2>Nome da tarefa aqui</h2>
+                </div>
+                <div class="tarefa__conteudo">
+                    <p>descricao da tarefa aqui para todo mundo ver e discutir sobre o assunto</p>
+                </div>
+                <div class="tarefa__footer">
+                    <img src="./imagens/icone_editar.png" alt="icone imagem editar">
+                </div>
+            </li> -->
+            <li id="botao__adicionar-tarefa">
+                <img src="./imagens/icone_adicionar-tarefa.png" alt="icone de adicionar tarefa">
+            </li>
+        </ul>
+
+        <dialog class="modal_formulario">
+            <div>
+                <form id="formulario__tarefa" aria-hidden="true">
+                    <label id="titulo-formulario">Nova Tarefa</label>
+                    <div>
+                        <h2>Titulo:</h2>
+                        <input id="app__input-titulo" type="text" required placeholder="ex: lista de compras"
+                            maxlength="20">
+                        <div>
+                            <svg id="opcao_cor_01" class="opcao_cor" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" fill="#D80032"></circle>
+                            </svg>
+                            <svg id="opcao_cor_02" class="opcao_cor" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" fill="#FF90BC"></circle>
+                            </svg>
+                            <svg id="opcao_cor_03" class="opcao_cor" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" fill="#7071E8"></circle>
+                            </svg>
+                            <svg id="opcao_cor_04" class="opcao_cor cor_selecionada" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" fill="#00A3FF"></circle>
+                            </svg>
+                        </div>
+
+                    </div>
+                    <h2>Texto:</h2>
+                    <textarea required id="app__input-descricao" cols="1" rows="2"
+                        placeholder="descreva aqui sua tarefa..." maxlength="120"></textarea>
+
+                    <div class="formulario__secao-botoes">
+                        <button type="button" id="botao-deletar">Deletar</button>
+                        <div class="espacamento-botoes"></div>
+                        <button type="button" id="botao-cancelar">cancelar</button>
+                        <button id="botao-salvar">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </dialog>
+
+    </main>
+
+    <div class="marca_d_agua">
+
+        <p>Desenvolvido por Nikolas Guedes</p>
+
+    </div>
+
+</body>
+
+</html>

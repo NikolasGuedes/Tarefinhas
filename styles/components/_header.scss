@@ -1,0 +1,191 @@
+header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    background: $degrade-azul_verde;
+
+    width: 100%;
+    margin: auto;
+    z-index: 10;
+    padding-top: 2em;
+    padding-bottom: 1em;
+
+    margin: 0;
+
+    h1 {
+        color: $cor-branca;
+        align-self: center;
+        font-weight: 600;
+        font-size: 2.5em;
+        margin-left: 2em;
+    }
+
+    ul {
+        display: flex;
+        align-self: center;
+        align-items: center;
+        height: 2em;
+        padding: 1em 1em;
+        border-radius: 1em;
+        margin-right: 3em;
+
+        background: rgba(255, 255, 255, 0.21);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5.3px);
+        -webkit-backdrop-filter: blur(5.3px);
+
+
+        li {
+            :hover {
+
+                transition: 0.2s;
+
+                cursor: pointer;
+
+                background: rgba(255, 255, 255, 0.21);
+
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(5.3px);
+                -webkit-backdrop-filter: blur(5.3px);
+            }
+
+            img {
+                margin: 0 0.3em;
+                width: 30px;
+                height: 30px;
+                padding: 0.5em;
+            }
+        }
+    }
+}
+
+.app__regiao_navbar--fluante {
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+
+    top: 7em;
+    width: 100%;
+    margin: auto;
+    z-index: 10;
+    margin: 0;
+
+}
+
+.menu_filtro {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+
+    width: 11.5em;
+    height: 5em;
+    padding: 1em 0.5em;
+    border-radius: 1em;
+    margin-right: 3em;
+
+    text-align: center;
+    font-size: 1em;
+
+    background: $cor-branca;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.3px);
+    -webkit-backdrop-filter: blur(5.3px);
+
+    p{
+        margin-top: 0.5em;
+    }
+
+    p:hover{
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    div {
+        margin-top: 1em;
+    }
+
+    svg:hover {
+        cursor: pointer;
+    }
+
+}
+
+.menu_lixeira {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+
+    width: 11.5em;
+    height: 5em;
+    padding: 1em 0.5em;
+    border-radius: 1em;
+    margin-right: 3em;
+
+    text-align: center;
+    font-size: 1em;
+
+    background: $cor-branca;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.3px);
+    -webkit-backdrop-filter: blur(5.3px);
+
+    p:hover {
+
+        cursor: pointer;
+        font-weight: 600;
+
+    }
+
+}
+
+.menu_config {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+
+    width: 11.5em;
+    height: 5em;
+    padding: 1em 0.5em;
+    border-radius: 1em;
+    margin-right: 3em;
+
+    text-align: center;
+    font-size: 1em;
+
+    background: $cor-branca;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.3px);
+    -webkit-backdrop-filter: blur(5.3px);
+
+    div {
+        margin-top: 0.5em;
+    }
+
+    svg:hover {
+        cursor: pointer;
+    }
+}
+
+#nome_tema-selecionado {
+    margin-top: 0.5em;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.2em;
+}

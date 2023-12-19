@@ -1,0 +1,10 @@
+@import '../abstract/variaveis';
+
+html, body{
+    background-color: $cor-verde_agua;
+    font-family: $fonte;
+}
+
+.hidden{
+    display: none !important;
+}
