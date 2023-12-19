@@ -158,6 +158,17 @@ header ul li img {
   font-size: 1.2em;
 }
 
+@media (max-width: 560px) {
+  header {
+    justify-content: space-evenly;
+  }
+  header h1 {
+    margin-left: 0;
+  }
+  header ul {
+    margin-right: 0;
+  }
+}
 .app__local-tarefas {
   display: flex;
   flex-wrap: wrap;
@@ -286,6 +297,11 @@ header ul li img {
   opacity: 50%;
 }
 
+@media (max-width: 560px) {
+  .app__local-tarefas ul {
+    justify-content: center;
+  }
+}
 .modal_formulario {
   flex-direction: column;
   align-items: center;

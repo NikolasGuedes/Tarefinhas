@@ -100,11 +100,11 @@ header {
     backdrop-filter: blur(5.3px);
     -webkit-backdrop-filter: blur(5.3px);
 
-    p{
+    p {
         margin-top: 0.5em;
     }
 
-    p:hover{
+    p:hover {
         cursor: pointer;
         font-weight: 600;
     }
@@ -188,4 +188,33 @@ header {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 1.2em;
+}
+
+
+
+@media(max-width: 560px) {
+
+    header {
+
+       
+        justify-content: space-evenly;
+        
+
+        h1 {
+           
+           
+            margin-left: 0;
+        }
+
+        ul {
+           
+            margin-right: 0;
+
+          
+
+
+           
+        }
+    }
+
 }
