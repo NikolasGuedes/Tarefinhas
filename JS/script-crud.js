@@ -2,22 +2,27 @@ const btnAdicionarTarefa = document.querySelector('#botao__adicionar-tarefa')
 const btnCancelarTarefa = document.querySelector('#botao-cancelar')
 const btnSalvarTarefa = document.querySelector('#botao-salvar')
 const btnDeletarTarefa = document.querySelector('#botao-deletar')
+
 const btnCorTarefa_01 = document.querySelector('#opcao_cor_01')
 const btnCorTarefa_02 = document.querySelector('#opcao_cor_02')
 const btnCorTarefa_03 = document.querySelector('#opcao_cor_03')
 const btnCorTarefa_04 = document.querySelector('#opcao_cor_04')
+
 const btnCorTema_01 = document.querySelector('#opcao_tema_01')
 const btnCorTema_02 = document.querySelector('#opcao_tema_02')
 const btnCorTema_03 = document.querySelector('#opcao_tema_03')
 const btnCorTema_04 = document.querySelector('#opcao_tema_04')
-// const btnCorFiltro_01 = document.querySelector('#opcao_filtro_01')
-// const btnCorFiltro_02 = document.querySelector('#opcao_filtro_02')
-// const btnCorFiltro_03 = document.querySelector('#opcao_filtro_03')
-// const btnCorFiltro_04 = document.querySelector('#opcao_filtro_04')
-// const btnRemoverFiltro = document.querySelector('#opcao_remover_filtro')
-// const btnIconeFiltro = document.querySelector('#botao__icone_filtro')
+
+const btnCorFiltro_01 = document.querySelector('#opcao_filtro_01')
+const btnCorFiltro_02 = document.querySelector('#opcao_filtro_02')
+const btnCorFiltro_03 = document.querySelector('#opcao_filtro_03')
+const btnCorFiltro_04 = document.querySelector('#opcao_filtro_04')
+
+const btnRemoverFiltro = document.querySelector('#opcao_remover_filtro')
+const btnIconeFiltro = document.querySelector('#botao__icone_filtro')
 const btnIconeLixeira = document.querySelector('#botao__icone_lixeira')
 const btnIconeConfig = document.querySelector('#botao__icone_config')
+
 const btnLateralDeletarConcluidas = document.querySelector('#botao_lateral--deletar_concluidas')
 const btnLateralDeletarTodas = document.querySelector('#botao_lateral--deletar_todas')
 
@@ -34,104 +39,125 @@ const menuLixeira = ulMenuLateral.querySelector(".menu_lixeira")
 const menuConfig = ulMenuLateral.querySelector(".menu_config")
 
 let listaTarefas = JSON.parse(localStorage.getItem('listaTarefas')) || []
+
 let temaSite = JSON.parse(localStorage.getItem('temaSelecionado')) || "garden"
 
 let tarefaEmEDicao = ""
 let elementoTarefaEmEdicao = ""
 let corTarefa = "#00A3FF"
 
-// btnRemoverFiltro.addEventListener('click', () => {
-//     selecionaFiltro("removeFiltro")
-// })
+let corFiltroSelecionada = ""
 
-// btnCorFiltro_01.addEventListener('click', () => {
-//     selecionaFiltro("vermelho")
-// })
+btnRemoverFiltro.addEventListener('click', () => {
+    selecionaFiltro("removeFiltro")
+})
 
-// btnCorFiltro_02.addEventListener('click', () => {
-//     selecionaFiltro("rosa")
-// })
+btnCorFiltro_01.addEventListener('click', () => {
+    selecionaFiltro("vermelho")
+})
 
-// btnCorFiltro_03.addEventListener('click', () => {
-//     selecionaFiltro("roxo")
-// })
+btnCorFiltro_02.addEventListener('click', () => {
+    selecionaFiltro("rosa")
+})
 
-// btnCorFiltro_04.addEventListener('click', () => {
-//     selecionaFiltro("azul")
-// })
+btnCorFiltro_03.addEventListener('click', () => {
+    selecionaFiltro("roxo")
+})
 
-// function redesenhaPagina() {
+btnCorFiltro_04.addEventListener('click', () => {
+    selecionaFiltro("azul")
+})
 
-//     document.querySelectorAll('.tarefa_lista').forEach((tarefa) => {
-//         tarefa.remove()
-//     })
+function RemoveTarefasFiltroTela() {
 
-//     listaTarefas.forEach(tarefa => {
+    document.querySelectorAll('.tarefa_lista').forEach((tarefa) => {
+        tarefa.remove()
+    })
 
-//         const desenhaTarefaGuardadaNaLista = criaTarefa(tarefa)
-//         ulListaTarefas.prepend(desenhaTarefaGuardadaNaLista)
+}
 
-//     });
+function selecionaFiltro(corFiltro) {
 
-// }
+    document.querySelectorAll('.opcao_filtro').forEach((opcao_filtro) => {
+        opcao_filtro.classList.remove('cor_selecionada')
+    })
 
-// function selecionaFiltro(corFiltro) {
+    switch (corFiltro) {
 
-//     listaTarefas = JSON.parse(localStorage.getItem('listaTarefas'))
+        case "removeFiltro":
+
+            RemoveTarefasFiltroTela()
+            desenhaTarefas()
+
+            corFiltroSelecionada = "removeFiltro"
+
+            break;
+        case "vermelho":
+
+            btnCorFiltro_01.classList.add('cor_selecionada')
+            listaTarefasVermelha = listaTarefas.filter(tarefa => tarefa.corTarefa == "#D80032")
+            corFiltroSelecionada = "vermelho"
+
+            RemoveTarefasFiltroTela()
+
+            listaTarefasVermelha.forEach(tarefa => {
+
+                const desenhaTarefaGuardadaNaLista = criaTarefa(tarefa)
+                ulListaTarefas.prepend(desenhaTarefaGuardadaNaLista)
+
+            });
+
+            break;
+        case "rosa":
+
+            btnCorFiltro_02.classList.add('cor_selecionada')
+            listaTarefasRosa = listaTarefas.filter(tarefa => tarefa.corTarefa == "#FF90BC")
+            corFiltroSelecionada = "rosa"
+
+            RemoveTarefasFiltroTela()
+
+            listaTarefasRosa.forEach(tarefa => {
+
+                const desenhaTarefaGuardadaNaLista = criaTarefa(tarefa)
+                ulListaTarefas.prepend(desenhaTarefaGuardadaNaLista)
+
+            });
+
+            break;
+        case "roxo":
+
+            btnCorFiltro_03.classList.add('cor_selecionada')
+            listaTarefasRoxa = listaTarefas.filter(tarefa => tarefa.corTarefa == "#7071E8")
+            corFiltroSelecionada = "roxo"
+
+            RemoveTarefasFiltroTela()
+
+            listaTarefasRoxa.forEach(tarefa => {
+
+                const desenhaTarefaGuardadaNaLista = criaTarefa(tarefa)
+                ulListaTarefas.prepend(desenhaTarefaGuardadaNaLista)
+
+            });
+            break;
+        case "azul":
+
+            btnCorFiltro_04.classList.add('cor_selecionada')
+            listaTarefasAzul = listaTarefas.filter(tarefa => tarefa.corTarefa == "#00A3FF")
+            corFiltroSelecionada = "azul"
+
+            RemoveTarefasFiltroTela()
+
+            listaTarefasAzul.forEach(tarefa => {
+
+                const desenhaTarefaGuardadaNaLista = criaTarefa(tarefa)
+                ulListaTarefas.prepend(desenhaTarefaGuardadaNaLista)
+
+            });
+            break;
+    }
+}
 
 
-//     document.querySelectorAll('.opcao_filtro').forEach((opcao_filtro) => {
-//         opcao_filtro.classList.remove('cor_selecionada')
-//     })
-
-//     switch (corFiltro) {
-
-//         case "removeFiltro":
-
-//             filtroAtivado = false
-
-//             redesenhaPagina()
-
-//             break;
-//         case "vermelho":
-
-//             filtroAtivado = true
-
-//             btnCorFiltro_01.classList.add('cor_selecionada')
-//             listaTarefas = listaTarefas.filter(tarefa => tarefa.corTarefa == "#D80032")
-
-//             redesenhaPagina()
-
-//             break;
-//         case "rosa":
-
-//             filtroAtivado = true
-
-//             btnCorFiltro_02.classList.add('cor_selecionada')
-//             listaTarefas = listaTarefas.filter(tarefa => tarefa.corTarefa == "#FF90BC")
-
-//             redesenhaPagina()
-//             break;
-//         case "roxo":
-
-//             filtroAtivado = true
-
-//             btnCorFiltro_03.classList.add('cor_selecionada')
-//             listaTarefas = listaTarefas.filter(tarefa => tarefa.corTarefa == "#7071E8")
-
-//             redesenhaPagina()
-//             break;
-//         case "azul":
-
-//             filtroAtivado = true
-
-//             btnCorFiltro_04.classList.add('cor_selecionada')
-//             listaTarefas = listaTarefas.filter(tarefa => tarefa.corTarefa == "#00A3FF")
-
-//             redesenhaPagina()
-//             break;
-//     }
-// }
 
 btnCorTema_01.addEventListener('click', () => {
     selecionaTemaSite('garden')
@@ -229,16 +255,16 @@ function selecionaTemaSite(temaSelecionado) {
 
 const removeMenuLateral = () => {
     menufiltro.classList.add('hidden')
-    // btnIconeFiltro.style.background = ""
+    btnIconeFiltro.style.background = ""
     menuLixeira.classList.add('hidden')
     btnIconeLixeira.style.background = ""
     menuConfig.classList.add('hidden')
     btnIconeConfig.style.background = ""
 }
 
-// btnIconeFiltro.addEventListener('click', () => {
-//     selecionaMenuLateral("icone_filtro")
-// })
+btnIconeFiltro.addEventListener('click', () => {
+    selecionaMenuLateral("icone_filtro")
+})
 
 btnIconeLixeira.addEventListener('click', () => {
     selecionaMenuLateral("icone_lixeira")
@@ -272,9 +298,9 @@ function resetaVariaveisEdicaoTarefa() {
 
 btnAdicionarTarefa.addEventListener('click', () => {
 
-    document.querySelectorAll('.opcao_filtro').forEach((opcao_filtro) => {
-        opcao_filtro.classList.remove('cor_selecionada')
-    })
+    // document.querySelectorAll('.opcao_filtro').forEach((opcao_filtro) => {
+    //     opcao_filtro.classList.remove('cor_selecionada')
+    // })
 
 
     limparFormulario()
@@ -307,7 +333,7 @@ function selecionaMenuLateral(icone) {
             } else {
 
                 menufiltro.classList.remove('hidden')
-                // btnIconeFiltro.style.background = "rgba(255, 255, 255, 0.3)"
+                btnIconeFiltro.style.background = "rgba(255, 255, 255, 0.3)"
 
                 menuLixeira.classList.add('hidden')
                 btnIconeLixeira.style.background = ""
@@ -327,7 +353,7 @@ function selecionaMenuLateral(icone) {
                 btnIconeLixeira.style.background = "rgba(255, 255, 255, 0.3)"
 
                 menufiltro.classList.add('hidden')
-                // btnIconeFiltro.style.background = ""
+                btnIconeFiltro.style.background = ""
                 menuConfig.classList.add('hidden')
                 btnIconeConfig.style.background = ""
             }
@@ -344,7 +370,7 @@ function selecionaMenuLateral(icone) {
                 btnIconeConfig.style.background = "rgba(255, 255, 255, 0.3)"
 
                 menufiltro.classList.add('hidden')
-                // btnIconeFiltro.style.background = ""
+                btnIconeFiltro.style.background = ""
                 menuLixeira.classList.add('hidden')
                 btnIconeLixeira.style.background = ""
             }
@@ -609,18 +635,23 @@ formTarefa.addEventListener('submit', (evento) => {
     atualizaLocalStorage()
     limparFormulario()
 
+    selecionaFiltro(corFiltroSelecionada)
+
 })
 
+function desenhaTarefas() {
+    listaTarefas.forEach(tarefa => {
 
-listaTarefas.forEach(tarefa => {
+        tarefa.emEdicao = false
+        atualizaLocalStorage()
 
-    tarefa.emEdicao = false
-    atualizaLocalStorage()
+        const desenhaTarefaGuardadaNaLista = criaTarefa(tarefa)
+        ulListaTarefas.prepend(desenhaTarefaGuardadaNaLista)
 
-    const desenhaTarefaGuardadaNaLista = criaTarefa(tarefa)
-    ulListaTarefas.prepend(desenhaTarefaGuardadaNaLista)
+    });
+}
 
-});
+desenhaTarefas()
 
 selecionaTemaSite(temaSite)
 
